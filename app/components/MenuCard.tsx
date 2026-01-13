@@ -9,7 +9,7 @@ export function MenuCard({ dish, onAddToOrder }: MenuCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
       <img
-        src={dish.image}
+        src={dish.imageUrl}
         alt={dish.name}
         className="w-full h-48 object-cover"
       />
