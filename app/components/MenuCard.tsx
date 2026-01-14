@@ -14,7 +14,7 @@ export function MenuCard({ dish, onAddToOrder }: MenuCardProps) {
         className="w-full h-48 object-cover"
       />
       <div className="p-4">
-        <h3 className="text-xl mb-2">{dish.name}</h3>
+        <h3 className="text-xl mb-2 text-gray-900">{dish.name}</h3>
         <div className="flex items-center justify-between">
           <span className="text-2xl text-orange-600">
             {dish.price.toFixed(2)} €

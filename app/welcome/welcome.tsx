@@ -87,7 +87,7 @@ export function Welcome() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           {/* Menu */}
           <section className="mb-16">
-            <h2 className="text-3xl mb-8">Notre Menu</h2>
+            <h2 className="text-3xl mb-8 text-gray-900">Notre Menu</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {MENU_ITEMS.map((dish) => (
                 <MenuCard key={dish.id} dish={dish} onAddToOrder={addToOrder} />

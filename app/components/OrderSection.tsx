@@ -18,9 +18,35 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
     0
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Commande envoyée ! Merci pour votre commande.");
+
+    const payload = {
+      fullName: formData.name,
+      email: formData.email,
+      phoneNumber: formData.phone,
+      address: formData.address,
+      products: orderItems.map((item) => String(item.id)),
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with ${response.status}`);
+      }
+
+      alert("Commande envoyée ! Merci pour votre commande.");
+    } catch (error) {
+      console.error("Order submit failed", error);
+      alert("Echec d'envoi. Reessayez plus tard.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +58,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
 
   return (
     <section className="bg-white rounded-lg shadow-md p-8">
-      <h2 className="text-3xl mb-6">Votre Commande</h2>
+      <h2 className="text-3xl mb-6 text-gray-900">Votre Commande</h2>
 
       {/* Liste des plats commandés */}
       {orderItems.length > 0 && (
@@ -66,7 +92,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
       {/* Formulaire de coordonnées */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block mb-2">
+          <label htmlFor="name" className="block mb-2 text-gray-900">
             Nom complet
           </label>
           <input
@@ -81,7 +107,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-2">
+          <label htmlFor="email" className="block mb-2 text-gray-900">
             Email
           </label>
           <input
@@ -91,12 +117,12 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 "
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block mb-2">
+          <label htmlFor="phone" className="block mb-2 text-gray-900">
             Téléphone
           </label>
           <input
@@ -111,7 +137,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
         </div>
 
         <div>
-          <label htmlFor="address" className="block mb-2">
+          <label htmlFor="address" className="block mb-2 text-gray-900">
             Adresse de livraison
           </label>
           <input
