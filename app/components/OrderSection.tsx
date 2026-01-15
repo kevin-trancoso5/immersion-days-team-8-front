@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { OrderItem } from "../welcome/welcome";
+import { BACKEND_URL, type OrderItem } from "../welcome/welcome";
 
 interface OrderSectionProps {
   orderItems: OrderItem[];
@@ -30,7 +30,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/orders", {
+      const response = await fetch(`${BACKEND_URL}/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

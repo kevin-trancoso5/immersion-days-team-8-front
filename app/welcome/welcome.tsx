@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MenuCard } from "../components/MenuCard";
 import { OrderSection } from "../components/OrderSection";
 
-const BACKEND_URL = "https://proxy.corsfix.com/?http://51.15.215.9:3000";
+export const BACKEND_URL = "https://proxy.corsfix.com/?http://51.15.215.9:3000";
 
 export interface Dish {
   id: number;
