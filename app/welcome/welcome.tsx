@@ -71,7 +71,7 @@ export function Welcome() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           {/* Menu */}
           <section className="mb-16">
-            <h2 className="text-3xl mb-8">Notre Menu</h2>
+            <h2 className="text-3xl mb-8 text-gray-900">Notre Menu</h2>
 
             {loading && (
               <div className="flex justify-center items-center py-12">

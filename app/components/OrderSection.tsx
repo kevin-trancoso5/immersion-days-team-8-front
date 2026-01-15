@@ -63,7 +63,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
       {/* Liste des plats commandés */}
       {orderItems.length > 0 && (
         <div className="mb-8 p-4 bg-gray-50 rounded-lg">
-          <h3 className="text-xl mb-4">Plats sélectionnés</h3>
+          <h3 className="text-xl mb-4 text-gray-900">Plats sélectionnés</h3>
           <div className="space-y-3">
             {orderItems.map((item) => (
               <div
@@ -71,7 +71,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
                 className="flex justify-between items-center border-b pb-2"
               >
                 <div>
-                  <span className="font-medium">{item.name}</span>
+                  <span className="font-medium text-gray-900">{item.name}</span>
                   <span className="text-gray-600 ml-2">x{item.quantity}</span>
                 </div>
                 <span className="text-orange-600">
@@ -81,7 +81,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             ))}
           </div>
           <div className="mt-4 pt-4 border-t-2 border-orange-600 flex justify-between items-center">
-            <span className="text-xl">Total</span>
+            <span className="text-xl text-gray-900">Total</span>
             <span className="text-2xl text-orange-600">
               {totalPrice.toFixed(2)} €
             </span>
@@ -102,7 +102,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-600"
           />
         </div>
 
@@ -117,7 +117,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600 "
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-600 "
           />
         </div>
 
@@ -132,7 +132,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-600"
           />
         </div>
 
@@ -147,7 +147,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
             value={formData.address}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-600"
           />
         </div>
 
