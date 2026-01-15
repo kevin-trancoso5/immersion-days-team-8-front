@@ -26,7 +26,7 @@ export function OrderSection({ orderItems }: OrderSectionProps) {
       email: formData.email,
       phoneNumber: formData.phone,
       address: formData.address,
-      products: orderItems.map((item) => String(item.id)),
+      productIds: orderItems.map((item) => String(item.id)),
     };
 
     try {
