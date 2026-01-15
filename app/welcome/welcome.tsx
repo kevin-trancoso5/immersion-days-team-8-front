@@ -62,7 +62,7 @@ export function Welcome() {
       <div className="min-h-screen bg-gray-50">
         {/* Bannière */}
         <header className="bg-gradient-to-r from-orange-600 to-red-600 text-white py-8 px-6 shadow-lg">
-          <h1 className="text-4xl text-center">La Belle Table</h1>
+          <h1 className="text-4xl text-center">Restaurant Marmaris</h1>
           <p className="text-center mt-2 text-orange-100">
             Restaurant Français
           </p>

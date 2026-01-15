@@ -3,8 +3,8 @@ import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Marmaris Restaurant" },
-    { name: "description", content: "Welcome to Marmaris Restaurant!" },
+    { title: "Restaurant Marmaris" },
+    { name: "description", content: "Bienvenue au Restaurant Marmaris!" },
   ];
 }
 
